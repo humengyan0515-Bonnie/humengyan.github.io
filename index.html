@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>胡梦燕 · 视觉设计 / 品牌宣传</title>
+<meta name="description" content="胡梦燕 — 视觉设计师 / 品牌宣传。杭州师范大学艺术设计硕士，专注 AIGC 视觉与品牌传播。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EFECE4;
+  --paper-2:#E7E2D7;
+  --ink:#171614;
+  --ink-soft:#57534A;
+  --line:#D3CCBF;
+  --accent:#2B27D4;
+  --accent-tint:#E4E3F7;
+  --serif:"Noto Serif SC",serif;
+  --sans:"Noto Sans SC",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt";
+  overflow-x:hidden;
+}
+
+.wrap{
+  max-width:1160px;
+  margin:0 auto;
+  padding:0 clamp(1.4rem,5vw,4rem);
+}
+
+/* ---------- mono utility labels ---------- */
+.mono{font-family:var(--mono);letter-spacing:.02em}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+
+/* ---------- masthead ---------- */
+.mast{
+  padding:clamp(3rem,7vw,5.5rem) 0 clamp(2rem,4vw,3rem);
+  border-bottom:1px solid var(--ink);
+}
+.mast-top{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:2rem;
+  flex-wrap:wrap;
+}
+.mast-id{flex:1 1 340px;min-width:0}
+.mast .kicker{
+  font-family:var(--mono);
+  font-size:.74rem;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:1.2rem;
+  display:block;
+}
+.name{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:clamp(3.4rem,11vw,7rem);
+  line-height:.94;
+  letter-spacing:.04em;
+  color:var(--ink);
+}
+.name .en{
+  display:block;
+  font-family:var(--mono);
+  font-weight:400;
+  font-size:clamp(.7rem,1.6vw,.85rem);
+  letter-spacing:.34em;
+  color:var(--accent);
+  margin-top:1.1rem;
+  padding-left:.1em;
+}
+.aim{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(1.15rem,2.6vw,1.6rem);
+  margin-top:1.6rem;
+  color:var(--ink);
+}
+.aim b{color:var(--accent);font-weight:600}
+
+/* portrait */
+.portrait{
+  flex:0 0 auto;
+  width:clamp(120px,20vw,168px);
+  aspect-ratio:3/4;
+  position:relative;
+  background:var(--paper-2);
+  border:1px solid var(--ink);
+  overflow:hidden;
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait .fallback{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:.4rem;
+  background:var(--accent);color:var(--paper);
+}
+.portrait .fallback span{font-family:var(--serif);font-size:3.2rem;font-weight:700;line-height:1}
+.portrait .fallback small{font-family:var(--mono);font-size:.6rem;letter-spacing:.25em}
+
+/* contact / skills strip */
+.strip{
+  margin-top:clamp(2rem,4vw,3rem);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.4rem 2.4rem;
+}
+.strip .cell{border-top:1px solid var(--line);padding-top:.8rem}
+.strip .lab{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:.35rem;
+}
+.strip .val{font-family:var(--mono);font-size:.92rem;color:var(--ink);word-break:break-word}
+.strip .val a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+.strip .val a:hover{color:var(--accent);border-color:var(--accent)}
+.skills-cell{grid-column:1/-1}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.2rem}
+.skill-tags span{
+  font-family:var(--mono);font-size:.78rem;
+  padding:.28rem .7rem;border:1px solid var(--line);border-radius:100px;
+  color:var(--ink);white-space:nowrap;
+}
+
+/* ---------- section frame (hanging index) ---------- */
+.section{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:clamp(1.5rem,3vw,3.5rem);
+  padding:clamp(2.6rem,5vw,4.2rem) 0;
+  border-bottom:1px solid var(--line);
+}
+.section-head{position:relative}
+.section-index{
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;
+  color:var(--accent);display:block;margin-bottom:.7rem;
+}
+.section-title{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(1.5rem,3.4vw,2.1rem);
+  line-height:1.1;letter-spacing:.06em;
+}
+.section-title .sub{
+  display:block;font-family:var(--mono);font-weight:400;
+  font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ink-soft);margin-top:.6rem;
+}
+
+/* ---------- education ---------- */
+.edu{display:flex;flex-direction:column;gap:1.5rem}
+.edu-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem;align-items:baseline;
+  padding-bottom:1.5rem;border-bottom:1px dotted var(--line);
+}
+.edu-row:last-child{border-bottom:none;padding-bottom:0}
+.edu-when{font-family:var(--mono);font-size:.82rem;color:var(--accent);white-space:nowrap}
+.edu-main .school{font-family:var(--serif);font-weight:600;font-size:1.22rem;letter-spacing:.03em}
+.edu-main .degree{font-size:.9rem;color:var(--ink-soft);margin-top:.25rem}
+.edu-rank{font-family:var(--mono);font-size:.82rem;color:var(--ink);white-space:nowrap;text-align:right}
+.edu-rank b{color:var(--accent);font-weight:500}
+
+/* ---------- experience ---------- */
+.jobs{display:flex;flex-direction:column;gap:clamp(2rem,3.5vw,2.8rem)}
+.job{position:relative}
+.job-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:1rem;flex-wrap:wrap;margin-bottom:.35rem;
+}
+.job-when{font-family:var(--mono);font-size:.8rem;color:var(--ink-soft);letter-spacing:.04em}
+.job-role{
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;
+  color:var(--paper);background:var(--accent);
+  padding:.24rem .7rem;border-radius:2px;white-space:nowrap;
+}
+.job-co{font-family:var(--serif);font-weight:600;font-size:1.3rem;letter-spacing:.03em;margin-bottom:.9rem}
+.job-head + .bullets{margin-top:.7rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem .5rem;margin-bottom:1.1rem}
+.tags span{
+  font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);
+  border:1px solid var(--line);padding:.2rem .55rem;border-radius:2px;
+}
+.bullets{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.bullets li{position:relative;padding-left:1.4rem;font-size:.96rem;color:#26241f}
+.bullets li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:7px;height:7px;background:var(--accent);
+  transform:rotate(45deg);
+}
+.bullets li b{font-weight:500;color:var(--ink);background:linear-gradient(transparent 62%,var(--accent-tint) 62%)}
+
+/* ---------- honors ---------- */
+.honors{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:.9rem 2rem;
+}
+.honor{
+  display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:baseline;
+  padding:.65rem 0;border-bottom:1px solid var(--line);
+}
+.honor .badge{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;
+  color:var(--accent);border:1px solid var(--accent);
+  padding:.14rem .4rem;border-radius:2px;white-space:nowrap;min-width:2.6rem;text-align:center;
+}
+.honor .badge.gov{color:var(--ink);border-color:var(--ink)}
+.honor p{font-size:.9rem;color:#26241f;line-height:1.5}
+
+/* ---------- footer ---------- */
+.foot{
+  padding:clamp(2.4rem,4vw,3.5rem) 0 clamp(3rem,5vw,4rem);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+}
+.foot .sig{font-family:var(--serif);font-weight:600;font-size:1.1rem;letter-spacing:.1em}
+.foot .meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;color:var(--ink-soft);text-transform:uppercase}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:760px){
+  .section{grid-template-columns:1fr;gap:1.4rem}
+  .section-head{
+    display:flex;align-items:baseline;gap:1rem;
+    border-bottom:1px solid var(--ink);padding-bottom:.9rem;
+  }
+  .section-index{margin-bottom:0}
+  .section-title{font-size:1.55rem}
+  .section-title .sub{display:none}
+  .edu-row{grid-template-columns:1fr;gap:.4rem}
+  .edu-rank{text-align:left}
+  .mast-top{align-items:center}
+}
+@media(max-width:420px){
+  .name{font-size:3rem}
+  .portrait{width:96px}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="mast">
+    <div class="mast-top">
+      <div class="mast-id">
+        <span class="kicker">Résumé · 2026</span>
+        <h1 class="name">胡梦燕<span class="en">HU MENGYAN — VISUAL &amp; BRAND DESIGNER</span></h1>
+        <p class="aim">求职意向 —— <b>视觉设计</b> ｜ <b>品牌宣传</b></p>
+      </div>
+      <div class="portrait">
+        <img src="photo.jpg" alt="胡梦燕 证件照" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback" style="display:none">
+          <span>胡</span><small>PHOTO</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <div class="cell"><span class="lab">出生年月 / Born</span><span class="val">2001.05</span></div>
+      <div class="cell"><span class="lab">户籍 / Based in</span><span class="val">浙江 · 杭州</span></div>
+      <div class="cell"><span class="lab">MBTI</span><span class="val">ENTJ</span></div>
+      <div class="cell"><span class="lab">电话 / Tel</span><span class="val"><a href="tel:15397081038">153 9708 1038</a></span></div>
+      <div class="cell"><span class="lab">邮箱 / Email</span><span class="val"><a href="mailto:1637088590@qq.com">1637088590@qq.com</a></span></div>
+      <div class="cell skills-cell">
+        <span class="lab">技能 / Toolkit</span>
+        <div class="skill-tags">
+          <span>PS</span><span>PR</span><span>AI</span><span>3ds Max</span><span>Figma</span><span>Procreate</span><span>SketchUp</span><span>AIGC 创意工具</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ 教育背景 ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="section-index">01 / EDU</span>
+      <h2 class="section-title">教育背景<span class="sub">Education</span></h2>
+    </div>
+    <div class="edu">
+      <div class="edu-row">
+        <span class="edu-when">2023 — 2026</span>
+        <div class="edu-main">
+          <div class="school">杭州师范大学</div>
+          <div class="degree">硕士（全日制）· 艺术设计</div>
+        </div>
+        <span class="edu-rank">专业排名 <b>4/43</b></span>
+      </div>
+      <div class="edu-row">
+        <span class="edu-when">2019 — 2023</span>
+        <div class="edu-main">
+          <div class="school">浙江外国语学院</div>
+          <div class="degree">本科（全日制）· 艺术设计</div>
+        </div>
+        <span class="edu-rank">专业排名 <b>6/52</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 工作经历 ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="section-index">02 / WORK</span>
+      <h2 class="section-title">工作经历<span class="sub">Experience</span></h2>
+    </div>
+    <div class="jobs">
+
+      <article class="job">
+        <div class="job-head">
+          <span class="job-when">2025.06 — 2025.10 · 浙江同花顺云软件有限公司</span>
+          <span class="job-role">AIGC 视觉设计 · 实习</span>
+        </div>
+        <div class="job-co">AIGC 视觉设计</div>
+        <div class="tags"><span>AI</span><span>用户增长</span><span>ComfyUI</span><span>AIGC 平面创作</span><span>图像风格化</span><span>视觉定制</span></div>
+        <ul class="bullets">
+          <li>负责 <b>DreamFace、DreamShop</b> 业务，推动 AI 入局电商模特图领域，与多家中小型服装店合作，借助 ComfyUI 节点流程工具深化 AI 绘图，生成高满意度 AI 模特图内容，提升用户留存与活跃。</li>
+          <li>负责高端定制商业平面视觉交付，通过 AIGC 完成油画、动态转静态等多风格商业图像创作，统一视觉质感与<b>标准化输出规范</b>。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <span class="job-when">2025.02 — 2025.06 · 江南布衣服饰有限公司</span>
+          <span class="job-role">品牌运营 · 设计实习</span>
+        </div>
+        <div class="job-co">品牌运营 —— 设计</div>
+        <div class="tags"><span>事务管理</span><span>跨部门协作</span><span>品牌传播</span><span>线下活动视觉</span><span>品牌平面物料</span></div>
+        <ul class="bullets">
+          <li>参与品牌市场活动策划与落地执行，深度参与品牌读书会系列营销项目，提炼品牌故事与营销传播概念，产出<b>播客内容超 5 期</b>及社群宣传长图文，优化排版与文字表达，提升品牌传播力。</li>
+          <li>负责线下营销活动整套平面视觉落地，为黑胶分享会、CNY 新年活动设计主 KV、宣传单页、伴手礼视觉等全套物料，支撑活动拉新转化，<b>活动新增品牌用户 360 人</b>。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <span class="job-when">2024.05 — 2024.09 · 珀莱雅化妆品股份有限公司</span>
+          <span class="job-role">视觉设计 · 实习</span>
+        </div>
+        <div class="job-co">视觉设计</div>
+        <div class="tags"><span>电商视觉设计</span><span>宣传推广</span><span>品牌传播</span><span>跨部门协作</span><span>产品详情版式</span></div>
+        <ul class="bullets">
+          <li>负责品牌多个电商及新媒体平台的日常视觉运营与维护，主导产品详情页设计、产品精修美化及视觉效果图制作，以<b>高转化率视觉呈现</b>提升页面点击率与购买决策效率。</li>
+          <li>设计并输出多样化电商视觉素材，覆盖促销海报、季节性主题视觉（618、年货节）、新品主图及详情页，协同运营与策划团队<b>月度高效完成 30+ 图文需求</b>，推动营销活动落地。</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 校园经历 ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="section-index">03 / CAMPUS</span>
+      <h2 class="section-title">校园经历<span class="sub">Campus</span></h2>
+    </div>
+    <div class="jobs">
+
+      <article class="job">
+        <div class="job-head">
+          <span class="job-when">2024.09 — 2025.09 · 杭州师范大学美术学院</span>
+          <span class="job-role">党支部副书记</span>
+        </div>
+        <ul class="bullets">
+          <li><b>党务行政管理：</b>统筹 60 余名学生党员发展全流程，负责党员材料审核、档案管理、党建资料归档，流程规范。</li>
+          <li><b>党建宣传：</b>独立撰写党建活动宣传推文与策划文案，打造特色党建传播内容，完整负责活动创意、文稿撰写、落地复盘全流程。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <span class="job-when">2024.09 — 2025.09 · 杭州师范大学美术学院</span>
+          <span class="job-role">校级兼职辅导员</span>
+        </div>
+        <ul class="bullets">
+          <li><b>活动统筹：</b>牵头策划并落地 20+ 场院校级活动，同步配套产出微信公众号、视频号内容设计宣传，精准把握观众喜好，输出宣传海报与图文排版，熟练将 AI 工具运用于日常工作。</li>
+          <li><b>日常行政支持：</b>负责班级日常事务管理、通知传达、信息汇总、资料归档，保障班级事务高效运转。</li>
+          <li><b>师生双向沟通：</b>搭建师生沟通桥梁，协调解决学生日常问题，具备良好沟通协调与服务意识。</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <span class="job-when">2023.09 — 2024.09 · 杭州师范大学美术学院</span>
+          <span class="job-role">研究生办公室助管</span>
+        </div>
+        <ul class="bullets">
+          <li><b>行政事务处理：</b>高效协助老师完成日常办公事务，含文件整理、资料归档、信息录入等，保障办公室有序运转。</li>
+          <li><b>会务与活动支持：</b>负责学院学术讲座、研究生会议的筹备与现场协调，包括通知发布、场地布置、设备调试等。</li>
+          <li><b>文档材料管理：</b>协助管理研究生培养过程中的各类文档，如开题报告、中期考核等，确保资料齐全与合规。</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 荣誉证书 ============ -->
+  <section class="section reveal">
+    <div class="section-head">
+      <span class="section-index">04 / AWARDS</span>
+      <h2 class="section-title">荣誉证书<span class="sub">Honors</span></h2>
+    </div>
+    <div class="honors">
+      <div class="honor"><span class="badge">国际</span><p>日本概念艺术设计铜奖</p></div>
+      <div class="honor"><span class="badge">国际</span><p>香港当代设计三等奖</p></div>
+      <div class="honor"><span class="badge">国际</span><p>国际期刊论文发表一篇</p></div>
+      <div class="honor"><span class="badge gov">国家</span><p>核心期刊论文发表一篇</p></div>
+      <div class="honor"><span class="badge gov">省</span><p>浙江省社科规划"社科赋能行动"专项课题</p></div>
+      <div class="honor"><span class="badge gov">市</span><p>"钱江杯"反走私题材艺术比赛优秀奖</p></div>
+      <div class="honor"><span class="badge gov">区</span><p>杭州市西湖区反邪教美术创作一等奖</p></div>
+      <div class="honor"><span class="badge">校</span><p>浙江外国语学院艺术学院院级优秀毕业生</p></div>
+      <div class="honor"><span class="badge">校</span><p>杭州师范大学研究生二等奖学金 · 两次</p></div>
+      <div class="honor"><span class="badge">校</span><p>杭州师范大学研究生社会实践奖</p></div>
+      <div class="honor"><span class="badge">校</span><p>主持杭州师范大学校级专项课题一项</p></div>
+      <div class="honor"><span class="badge">校</span><p>参加杭州师范大学校级专项课题四项</p></div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="foot">
+    <span class="sig">胡梦燕 · HU MENGYAN</span>
+    <span class="meta">视觉设计 / 品牌宣传 · 杭州</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+</body>
+</html>
